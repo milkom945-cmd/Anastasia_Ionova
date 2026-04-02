@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Запись на консультацию к Анастасии Ионовой — форма и контакты.">
+  <title>Контакты и запись — Анастасия Ионова</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html">Анастасия Ионова <span>Психолог · наставник</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-panel" id="nav-panel" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Главная</a></li>
+          <li><a class="nav__link" href="about.html">О специалисте</a></li>
+          <li><a class="nav__link" href="services.html">Услуги</a></li>
+          <li><a class="nav__link" href="contacts.html" aria-current="page">Контакты</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="contacts.html">Записаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--tight">
+      <div class="container max-w-narrow text-center">
+        <p class="section__label">Контакты</p>
+        <h1 class="mb-lg">Запись на консультацию</h1>
+        <p>Напишите, как вам удобнее связаться. Я отвечу в течение рабочего времени и предложу варианты слотов для онлайн или офлайн встречи.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="kontakty">
+      <div class="container">
+        <div class="about-grid" style="align-items: start;">
+          <div>
+            <h2 style="font-size: 1.35rem;">Форма заявки</h2>
+            <p style="font-size: 0.9375rem;">Поля ниже можно позже подключить к почте, CRM или мессенджеру.</p>
+            <form class="form" data-contact-form action="#" method="post" style="margin-inline: 0; max-width: none;">
+              <div class="form__row">
+                <label for="name">Имя</label>
+                <input id="name" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться">
+              </div>
+              <div class="form__row">
+                <label for="contact">Телефон или мессенджер</label>
+                <input id="contact" name="contact" type="text" autocomplete="tel" required placeholder="Телефон, Telegram, WhatsApp…">
+              </div>
+              <div class="form__row">
+                <label for="message">Комментарий</label>
+                <textarea id="message" name="message" placeholder="Кратко опишите запрос или удобное время для связи"></textarea>
+              </div>
+              <button class="btn btn--primary btn--full" type="submit">Отправить заявку</button>
+              <p class="form__hint" data-form-message hidden role="status" style="color: var(--accent-2); margin-top: var(--space-sm);">Спасибо за обращение. Сообщение пока не отправляется на сервер — подключите почту или мессенджер, когда будете готовы.</p>
+              <p class="form__hint">Нажимая кнопку, вы соглашаетесь с обработкой данных для обратной связи. Острые кризисы и угроза жизни — повод обратиться в неотложную помощь.</p>
+            </form>
+          </div>
+          <div>
+            <h2 style="font-size: 1.35rem;">Соцсети и прямой контакт</h2>
+            <p style="font-size: 0.9375rem;">Замените ссылки на реальные, когда будете готовы.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-lg);">
+              <li style="margin-bottom: var(--space-sm);"><a href="#">Telegram</a> — для быстрых вопросов</li>
+              <li style="margin-bottom: var(--space-sm);"><a href="#">Instagram</a> — материалы и анонсы</li>
+              <li style="margin-bottom: var(--space-sm);"><a href="#">Email</a> — hello@example.com</li>
+            </ul>
+            <div class="cta-band" style="margin: 0; text-align: left; max-width: none;">
+              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm);">Призыв к действию</h3>
+              <p style="margin-inline: 0; max-width: none; margin-bottom: var(--space-md);">Если откликается мой подход — запишитесь на первую встречу. Это не обязывает продолжать; это честный разговор о том, чем я могу быть полезна.</p>
+              <a class="btn btn--primary" href="#kontakty">Заполнить форму выше</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <a class="site-logo" href="index.html" style="display: inline-block; margin-bottom: var(--space-sm);">Анастасия Ионова</a>
+        <p class="mb-0" style="font-size: 0.9375rem;">Психолог и наставник. Онлайн и офлайн.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О специалисте</a></li>
+          <li><a href="services.html">Услуги</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связь</h4>
+        <ul>
+          <li><a href="contacts.html">Запись на консультацию</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container site-footer__copy">
+      © Анастасия Ионова. Сайт носит информационный характер и не заменяет очную медицинскую помощь при острых состояниях.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
