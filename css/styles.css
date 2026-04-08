@@ -552,6 +552,12 @@ p:last-child {
   opacity: 0.6;
 }
 
+@media (max-width: 899px) {
+  .hero::after {
+    display: none;
+  }
+}
+
 .hero__grid {
   display: grid;
   gap: var(--space-xl);
@@ -914,15 +920,6 @@ p:last-child {
   line-height: 1.75;
   margin: 0;
   font-style: italic;
-}
-
-.testimonial-card__badge {
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--taupe);
-  text-align: right;
 }
 
 .testimonials__nav {
