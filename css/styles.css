@@ -621,8 +621,15 @@ p:last-child {
   margin: 0 0 0.4rem;
 }
 
-.hero__name > span {
+.hero__name-line {
   display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .hero__name {
+    font-size: clamp(1.7rem, 8.5vw, 2.35rem);
+  }
 }
 
 .hero__role {
