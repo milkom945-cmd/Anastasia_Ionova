@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <canvas class="silk-bg" data-silk-bg aria-hidden="true"></canvas>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-logo" href="index.html">Анастасия Ионова <span>Психолог · наставник</span></a>
@@ -34,41 +35,31 @@
       <div class="hero__grid">
         <div class="hero__content hero__content--stagger">
           <p class="section__label">Психологическое сопровождение</p>
-          <p class="hero__name">Анастасия Ионова</p>
-          <p class="hero__role">Психолог и наставник</p>
-          <h1 class="hero__title">Пространство, где можно быть <em>собой</em> — и опереться на себя</h1>
+          <p class="hero__name" data-split="chars">Анастасия Ионова</p>
+          <p class="hero__role" data-split="chars">Психолог и наставник</p>
+          <h1 class="hero__title" data-split="chars">Пространство, где можно быть <em>собой</em> — и опереться на себя</h1>
           <p class="hero__lead">Я помогаю бережно пройти сложные периоды, укрепить самооценку, обрести внутреннюю опору и выстроить отношения с собой и другими — без давления и навязанных решений.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="contacts.html">Записаться на консультацию</a>
             <a class="btn btn--ghost" href="about.html">Узнать обо мне</a>
           </div>
         </div>
-        <div class="hero__visual hero__visual--tilt" aria-hidden="true">
-          <div class="hero__frame">
-            <div class="hero__frame-inner">
-              <strong>Место для портрета</strong>
-              Здесь можно разместить вашу фотографию — спокойную, тёплую, в духе сайта.
-            </div>
-          </div>
+        <div class="hero__visual hero__visual--tilt">
+          <figure class="hero__frame hero__frame--photo">
+            <img class="hero__photo" src="img.webp" alt="Анастасия Ионова">
+            <figcaption class="sr-only">Портрет Анастасии Ионовой</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <section class="section" id="o-spec-preview">
-      <div class="container about-grid">
-        <div>
+      <div class="container max-w-narrow">
           <p class="section__label">О специалисте</p>
           <h2>Анастасия Ионова — психолог и наставник</h2>
           <p>Я помогаю взрастить самооценку, выйти из токсичных отношений, начать радоваться жизни, ставить цели и достигать их, мягко менять мышление в сторону поддерживающего, работать с эмоциями и проживать кризисы — в том темпе, который выдерживаете вы.</p>
           <p>Формат работы — онлайн и офлайн. В основе — тёплое, дружелюбное общение без давления и навязанных решений.</p>
           <p><a class="btn btn--ghost" href="about.html">Читать подробнее</a></p>
-        </div>
-        <div class="about-photo" aria-hidden="true">
-          <div class="about-photo__placeholder">
-            <strong style="font-family: var(--font-display); font-size: 1.125rem; color: var(--graphite); display: block; margin-bottom: 0.5rem;">Фото</strong>
-            Место для портрета на главной странице.
-          </div>
-        </div>
       </div>
     </section>
 
@@ -145,6 +136,160 @@
           </article>
         </div>
         <p style="margin-top: var(--space-lg);"><a class="btn btn--ghost" href="about.html">Подробнее обо мне</a></p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="reviews">
+      <div class="container">
+        <div class="text-center mb-lg">
+          <p class="section__label">Отзывы</p>
+          <h2>Тёплые слова после встреч</h2>
+          <p class="max-w-narrow" style="margin-inline: auto;">Отзывы — это всегда личный опыт. Я бережно отношусь к конфиденциальности, поэтому здесь — обобщённые формулировки без деталей.</p>
+        </div>
+
+        <div class="testimonials" data-testimonials>
+          <div class="testimonials__grid">
+            <div class="testimonials__stage" aria-live="polite">
+              <div class="testimonials__quote" aria-hidden="true">“</div>
+
+              <article class="testimonial-card is-active" data-testimonial>
+                <div class="testimonial-card__top">
+                  <div class="testimonial-card__person">
+                    <div class="testimonial-card__avatar" aria-hidden="true">А</div>
+                    <div>
+                      <div class="testimonial-card__name">Анна</div>
+                      <div class="testimonial-card__meta">индивидуальные консультации</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">
+                    <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                  </div>
+                </div>
+                <div class="testimonial-card__divider" aria-hidden="true"></div>
+                <p class="testimonial-card__text">После первой встречи стало намного спокойнее: как будто внутри появилась структура. Понравилось, что меня не торопили и не “лечили советами”, а помогли самой услышать, что мне важно.</p>
+                <div class="testimonial-card__badge">Проверено</div>
+              </article>
+
+              <article class="testimonial-card" data-testimonial>
+                <div class="testimonial-card__top">
+                  <div class="testimonial-card__person">
+                    <div class="testimonial-card__avatar" aria-hidden="true">Е</div>
+                    <div>
+                      <div class="testimonial-card__name">Елена</div>
+                      <div class="testimonial-card__meta">пакет консультаций</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">
+                    <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                  </div>
+                </div>
+                <div class="testimonial-card__divider" aria-hidden="true"></div>
+                <p class="testimonial-card__text">Я впервые почувствовала, что могу говорить о сложном без стыда. Постепенно получилось выстроить границы и перестать “тащить” отношения одной. Очень бережно и глубоко.</p>
+                <div class="testimonial-card__badge">Проверено</div>
+              </article>
+
+              <article class="testimonial-card" data-testimonial>
+                <div class="testimonial-card__top">
+                  <div class="testimonial-card__person">
+                    <div class="testimonial-card__avatar" aria-hidden="true">М</div>
+                    <div>
+                      <div class="testimonial-card__name">Мария</div>
+                      <div class="testimonial-card__meta">наставничество</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">
+                    <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                  </div>
+                </div>
+                <div class="testimonial-card__divider" aria-hidden="true"></div>
+                <p class="testimonial-card__text">Появилось ощущение внутренней опоры: я начала принимать решения из спокойствия, а не из тревоги. Нравится, что есть поддержка, но без давления — всё очень по-человечески.</p>
+                <div class="testimonial-card__badge">Проверено</div>
+              </article>
+
+              <article class="testimonial-card" data-testimonial>
+                <div class="testimonial-card__top">
+                  <div class="testimonial-card__person">
+                    <div class="testimonial-card__avatar" aria-hidden="true">И</div>
+                    <div>
+                      <div class="testimonial-card__name">Ирина</div>
+                      <div class="testimonial-card__meta">индивидуальные консультации</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">
+                    <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                  </div>
+                </div>
+                <div class="testimonial-card__divider" aria-hidden="true"></div>
+                <p class="testimonial-card__text">Очень поддерживающее сопровождение. Мы аккуратно разобрали, почему я всё время сомневаюсь в себе, и я наконец-то перестала обесценивать свои чувства и решения.</p>
+                <div class="testimonial-card__badge">Проверено</div>
+              </article>
+
+              <article class="testimonial-card" data-testimonial>
+                <div class="testimonial-card__top">
+                  <div class="testimonial-card__person">
+                    <div class="testimonial-card__avatar" aria-hidden="true">С</div>
+                    <div>
+                      <div class="testimonial-card__name">Светлана</div>
+                      <div class="testimonial-card__meta">пакет консультаций</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">
+                    <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                  </div>
+                </div>
+                <div class="testimonial-card__divider" aria-hidden="true"></div>
+                <p class="testimonial-card__text">Понравилось, что всё было очень “по-взрослому”: без обещаний чудес, но с ясными шагами. Я научилась замечать свои границы и говорить о них спокойно.</p>
+                <div class="testimonial-card__badge">Проверено</div>
+              </article>
+
+              <article class="testimonial-card" data-testimonial>
+                <div class="testimonial-card__top">
+                  <div class="testimonial-card__person">
+                    <div class="testimonial-card__avatar" aria-hidden="true">О</div>
+                    <div>
+                      <div class="testimonial-card__name">Ольга</div>
+                      <div class="testimonial-card__meta">индивидуальные консультации</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">
+                    <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                  </div>
+                </div>
+                <div class="testimonial-card__divider" aria-hidden="true"></div>
+                <p class="testimonial-card__text">После нескольких встреч стало легче проживать эмоции: я перестала “сжиматься” и убегать от чувств. Появилась мягкость к себе и больше спокойствия внутри.</p>
+                <div class="testimonial-card__badge">Проверено</div>
+              </article>
+
+              <article class="testimonial-card" data-testimonial>
+                <div class="testimonial-card__top">
+                  <div class="testimonial-card__person">
+                    <div class="testimonial-card__avatar" aria-hidden="true">Н</div>
+                    <div>
+                      <div class="testimonial-card__name">Наталья</div>
+                      <div class="testimonial-card__meta">наставничество</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-card__stars" aria-label="Оценка 5 из 5">
+                    <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                  </div>
+                </div>
+                <div class="testimonial-card__divider" aria-hidden="true"></div>
+                <p class="testimonial-card__text">Мне было важно, чтобы поддержка не превращалась в контроль. Здесь получилось: я двигалась к целям в своём темпе, и при этом чувствовала опору и уважение к моим границам.</p>
+                <div class="testimonial-card__badge">Проверено</div>
+              </article>
+            </div>
+
+            <div class="testimonials__nav" aria-label="Навигация по отзывам">
+              <button class="testimonials__btn" type="button" data-testimonials-prev aria-label="Предыдущий отзыв">‹</button>
+              <div class="testimonials__dots" data-testimonials-dots aria-label="Выбор отзыва"></div>
+              <button class="testimonials__btn" type="button" data-testimonials-next aria-label="Следующий отзыв">›</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: var(--space-xl);">
+          <a class="btn btn--primary" href="contacts.html">Записаться на консультацию</a>
+        </div>
       </div>
     </section>
 
