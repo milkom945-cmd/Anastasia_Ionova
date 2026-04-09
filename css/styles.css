@@ -1303,6 +1303,110 @@ p:last-child {
   margin-top: var(--space-md);
 }
 
+/* Booking modal */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.booking-modal[hidden] {
+  display: none !important;
+}
+
+.booking-modal__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 42, 38, 0.38);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.booking-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 420px);
+  max-height: min(92vh, 640px);
+  overflow: auto;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: var(--line-thin);
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-lift);
+}
+
+.booking-modal__close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(242, 236, 228, 0.85);
+  color: var(--graphite);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s var(--ease-out-expo);
+}
+
+.booking-modal__close:hover {
+  background: rgba(220, 203, 188, 0.65);
+  transform: scale(1.04);
+}
+
+.booking-modal__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  margin: 0 2.25rem var(--space-sm) 0;
+  color: var(--graphite);
+}
+
+.booking-modal__lead {
+  margin: 0 0 var(--space-md);
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.booking-modal__form.form {
+  max-width: none;
+  margin: 0;
+}
+
+.booking-modal__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: var(--space-md) 0 var(--space-md);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.booking-modal__consent input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  accent-color: var(--accent-2);
+  cursor: pointer;
+}
+
+.booking-modal__submit {
+  margin-top: var(--space-sm);
+}
+
+.booking-modal__hint {
+  margin-top: var(--space-md);
+}
+
 /* Footer */
 .site-footer {
   padding-block: var(--space-xl);

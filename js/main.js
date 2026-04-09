@@ -342,4 +342,117 @@
       el.classList.add("is-inview");
     });
   }
+
+  function initBookingModal() {
+    if (document.getElementById("booking-modal")) return;
+
+    var wrap = document.createElement("div");
+    wrap.id = "booking-modal";
+    wrap.className = "booking-modal";
+    wrap.setAttribute("role", "dialog");
+    wrap.setAttribute("aria-modal", "true");
+    wrap.setAttribute("aria-labelledby", "booking-modal-title");
+    wrap.innerHTML =
+      '<div class="booking-modal__scrim" data-booking-close tabindex="-1" aria-hidden="true"></div>' +
+      '<div class="booking-modal__panel">' +
+      '<button type="button" class="booking-modal__close" data-booking-close aria-label="Закрыть окно">×</button>' +
+      '<h2 id="booking-modal-title" class="booking-modal__title">Запись на консультацию</h2>' +
+      '<p class="booking-modal__lead">Оставьте имя и телефон — я свяжусь с вами для уточнения деталей.</p>' +
+      '<form class="booking-modal__form form" data-booking-form action="#" method="post" novalidate>' +
+      '<div class="form__row">' +
+      '<label for="booking-name">Имя</label>' +
+      '<input id="booking-name" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться">' +
+      "</div>" +
+      '<div class="form__row">' +
+      '<label for="booking-phone">Телефон</label>' +
+      '<input id="booking-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 …">' +
+      "</div>" +
+      '<label class="booking-modal__consent">' +
+      '<input id="booking-consent" name="consent" type="checkbox" value="1" required>' +
+      "<span>Даю согласие на обработку моих персональных данных</span>" +
+      "</label>" +
+      '<button class="btn btn--primary btn--full booking-modal__submit" type="submit">Отправить заявку</button>' +
+      '<p class="form__hint booking-modal__hint" data-booking-success hidden role="status"></p>' +
+      "</form>" +
+      "</div>";
+
+    document.body.appendChild(wrap);
+    wrap.hidden = true;
+
+    var form = wrap.querySelector("[data-booking-form]");
+    var successEl = wrap.querySelector("[data-booking-success]");
+
+    function closeNav() {
+      var t = document.querySelector(".nav-toggle");
+      var p = document.querySelector(".nav-panel");
+      if (t && p) {
+        t.setAttribute("aria-expanded", "false");
+        p.classList.remove("is-open");
+      }
+    }
+
+    function openModal() {
+      closeNav();
+      wrap.hidden = false;
+      document.body.style.overflow = "hidden";
+      if (successEl) {
+        successEl.hidden = true;
+        successEl.textContent = "";
+      }
+      var inp = wrap.querySelector("#booking-name");
+      if (inp) {
+        window.setTimeout(function () {
+          inp.focus();
+        }, 10);
+      }
+    }
+
+    function closeModal() {
+      wrap.hidden = true;
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll("[data-booking-open]").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    wrap.addEventListener("click", function (e) {
+      if (e.target.closest("[data-booking-close]")) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && wrap && !wrap.hidden) {
+        closeModal();
+      }
+    });
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        if (successEl) {
+          successEl.textContent =
+            "Спасибо! Заявка пока не уходит на сервер — подключите отправку почты или мессенджера.";
+          successEl.hidden = false;
+        }
+        form.reset();
+        window.setTimeout(function () {
+          closeModal();
+          if (successEl) {
+            successEl.hidden = true;
+          }
+        }, 2400);
+      });
+    }
+  }
+
+  initBookingModal();
 })();
